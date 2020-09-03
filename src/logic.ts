@@ -21,7 +21,7 @@ export async function isApproved(actionContext: ActionContext): Promise<void> {
     actionContext.setOutput(
       'approvedReviews',
       reviews.data
-        .filter(review => review.state === 'approved')
+        .filter(review => review.state === 'APPROVED')
         .length.toString()
     )
   } catch (error) {

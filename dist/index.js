@@ -1918,7 +1918,9 @@ function isApproved(actionContext) {
             const pull_number = Number(pullNumberString);
             const reviews = yield actionContext.octokit.pulls.listReviews(Object.assign(Object.assign({}, actionContext.context.repo), { pull_number }));
             actionContext.debug(util.inspect(reviews.data, true, 10));
-            actionContext.setOutput('approvedReviews', reviews.data.filter(review => review.state === 'approved').length.toString());
+            actionContext.setOutput('approvedReviews', reviews.data
+                .filter(review => review.state === 'APPROVED')
+                .length.toString());
         }
         catch (error) {
             actionContext.setFailed(error.message);
