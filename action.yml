@@ -1,11 +1,10 @@
-name: 'Your name here'
-description: 'Provide a description here'
-author: 'Your name or organization here'
+name: 'Pr Approved'
+description: 'Gets number of people that have approved this PR'
+author: 'peterjgrainger'
 inputs:
-  milliseconds: # change this
+  pull_number: # change this
     required: true
-    description: 'input description here'
-    default: 'default value if applicable'
+    description: 'pull request to check'
 runs:
   using: 'node12'
   main: 'dist/index.js'
