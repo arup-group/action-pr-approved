@@ -17,7 +17,7 @@ Number of reviews that have have the state "APPROVED"
 ## Example usage
 
 ```yaml
-uses: arup-group/action-is-pr-mergable@main
+uses: arup-group/action-pr-approved@main
 with:
   pull_number: {{ github.event.pull_request.number }}
 env:
